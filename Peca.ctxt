@@ -8,5 +8,5 @@ comment2.target=void\ mover(Casa)
 comment2.text=\r\n\ Movimenta\ a\ peca\ para\ uma\ nova\ casa.\r\n\ @param\ destino\ nova\ casa\ que\ ira\ conter\ esta\ peca.\r\n
 comment3.params=
 comment3.target=int\ getTipo()
-comment3.text=\r\n\ Valor\ \ \ \ Tipo\r\n\ \ \ 0\ \ \ Branca\ (Pedra)\r\n\ \ \ 1\ \ \ Branca\ (Dama)\r\n\ \ \ 2\ \ \ Vermelha\ (Pedra)\r\n\ \ \ 3\ \ \ Vermelha\ (Dama)\r\n\ @return\ o\ tipo\ da\ peca.\r\n
+comment3.text=\r\n\ Valor\ \ \ \ Tipo\r\n\ \ \ 0\ \ \ Branca\ (Torre)\r\n\ \ \ 1\ \ \ Branca\ (Cavalo)\r\n\ \ \ 2\ \ \ Branca\ (Bispo)\r\n\ \ \ 3\ \ \ Branca\ (Rainha)\r\n\ \ \ 4\ \ \ Branca\ (Rei)\r\n\ \ \ 5\ \ \ Branca\ (Peao)\r\n\ \ \ \r\n\ \ \ 6\ \ \ Preta\ \ (Torre)\r\n\ \ \ 7\ \ \ Preta\ \ (Cavalo)\r\n\ \ \ 8\ \ \ Preta\ \ (Bispo)\r\n\ \ \ 9\ \ \ Preta\ \ (Rainha)\r\n\ \ \ 10\ \ Preta\ \ (Rei)\r\n\ \ \ 11\ \ Preta\ \ (Peao)\r\n\ \ \ \r\n\ \ \ \r\n\ @return\ o\ tipo\ da\ peca.\r\n
 numComments=4
