@@ -8,27 +8,62 @@
  */
 public class Peca {
 
-    public static final int TORRE_BRANCA = 0;
-    public static final int CAVALO_BRANCO = 1;
-    public static final int BISPO_BRANCO = 2;
-    public static final int RAINHA_BRANCA = 3;
-    public static final int REI_BRANCO = 4;
-    public static final int PEAO_BRANCO = 5;
+    public static final int TORRE = 0;
+    public static final int CAVALO = 1;
+    public static final int BISPO = 2;
+    public static final int RAINHA = 3;
+    public static final int REI = 4;
+    public static final int PEAO = 5;
     
-    public static final int TORRE_PRETA = 6;
-    public static final int CAVALO_PRETO = 7;
-    public static final int BISPO_PRETO = 8;
-    public static final int RAINHA_PRETA = 9;
-    public static final int REI_PRETO = 10;
-    public static final int PEAO_PRETO = 11;
+    //com as cores diferentes ha 12 tipos de pecas, somando o tipo de peca a cor chegamos aos 12 tipos. (Andre)
+    
+    public static final int PRETO = 6;
+    public static final int BRANCO = 0;
+    
 
     private Casa casa;
     private int tipo;
+    //decidi colocar a variavel cor, pois acho que sera util quando implementarmos o jogo. (Andre)
+    private int cor;
+    
+    // private Torre torre;
+    private Cavalo cavalo;
+    // private Bispo bispo;
+    
+    
 
-    public Peca(Casa casa, int tipo) {
+    public Peca(Casa casa, int tipo, int cor) {
+        
         this.casa = casa;
         this.tipo = tipo;
+        this.cor = cor;
+        
+        //define o tipo de classe o objeto vai ter. (Andre)
+        this.definirPeca(tipo);
+        
         casa.colocarPeca(this);
+    }
+    
+    
+    /**
+     * define o tipo de classe o objeto vai ter
+     * dependento do tipo passado por parametro
+     */
+    
+    public void definirPeca(int tipo) {
+        
+        switch(tipo){
+            /*
+            *   outro exemplo:
+            *   case Peca.Torre:
+            *       this.torre = new Torre(this.cor);
+            *       break;
+            */
+            case Peca.CAVALO:
+                this.cavalo = new Cavalo(this.cor);
+                break;
+        }
+        
     }
     
     /**
@@ -36,31 +71,51 @@ public class Peca {
      * @param destino nova casa que ira conter esta peca.
      */
     public void mover(Casa destino) {
-        casa.removerPeca();
-        destino.colocarPeca(this);
-        casa = destino;
+        //O movimento sera feito dependendo do tipo de peca (Andre)      
+        switch (this.getTipo()) {
+            /*  exemplo
+             *  case Peca.TORRE:
+             *     this.casa = this.torre.mover(this.casa, destino, this);
+             *     break;
+             */
+            case Peca.CAVALO:
+                this.casa = this.cavalo.mover(this.casa, destino, this);
+                break;
+            default:
+                this.casa.removerPeca();
+                destino.colocarPeca(this);
+                this.casa = destino;
+                break;
+        }
+        
     }
 
     /**
      * Valor    Tipo
-     *   0   Branca (Torre)
-     *   1   Branca (Cavalo)
-     *   2   Branca (Bispo)
-     *   3   Branca (Rainha)
-     *   4   Branca (Rei)
-     *   5   Branca (Peao)
-     *   
-     *   6   Preta  (Torre)
-     *   7   Preta  (Cavalo)
-     *   8   Preta  (Bispo)
-     *   9   Preta  (Rainha)
-     *   10  Preta  (Rei)
-     *   11  Preta  (Peao)
-     *   
-     *   
+     *   0      Torre
+     *   1      Cavalo
+     *   2      Bispo
+     *   3      Rainha
+     *   4      Rei
+     *   5      Peao  
+     *
      * @return o tipo da peca.
      */
     public int getTipo() {
         return tipo;
     }
+    
+    
+    /**
+     * Valor    Cor
+     *   6      Preto
+     *   0      Branco
+          
+     * @return o tipo da peca.
+     */
+    public int getCor() {
+        return cor;
+    }
+
+    
 }

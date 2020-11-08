@@ -7,9 +7,13 @@
  * @author Leonardo Villeth &lt;lvilleth@cc.ci.ufpb.br&gt;
  */
 public class Casa {
-
-    private int x;
-    private int y;
+    
+    // Originalmento as variaveis eram privadas, mas 
+    // coloquei publicas pois precisei para definir o tipo de movimento da peca.
+    // pode mudar caso ache uma solucao :) (Andre)
+    
+    public int x;
+    public int y;
     private Peca peca;
 
     public Casa(int x, int y) {
@@ -35,7 +39,7 @@ public class Casa {
     /**
      * @return a Peca posicionada nesta Casa, ou Null se a casa estiver livre.
      */
-    public Peca getPeca() {
+    public Peca getPeca() {        
         return peca;
     }
     

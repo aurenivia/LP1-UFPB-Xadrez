@@ -80,42 +80,42 @@ public class TabuleiroGUI extends JPanel {
                 Casa casa = tabuleiro.getCasa(x, y);
                 if (casa.possuiPeca()) {
                     Peca peca = casa.getPeca();
-
-                    switch (peca.getTipo()) {
-                        case Peca.TORRE_BRANCA:
+                   
+                    switch (peca.getTipo() + peca.getCor()) {
+                        case Peca.TORRE + Peca.BRANCO:
                             casaGUI.desenharTorreBranca();
                             break;
-                        case Peca.CAVALO_BRANCO:
+                        case Peca.CAVALO + Peca.BRANCO:
                             casaGUI.desenharCavaloBranco();
                             break;
-                        case Peca.BISPO_BRANCO:
+                        case Peca.BISPO + Peca.BRANCO:
                             casaGUI.desenharBispoBranco();
                             break;
-                        case Peca.RAINHA_BRANCA:
+                        case Peca.RAINHA + Peca.BRANCO:
                             casaGUI.desenharRainhaBranca();
                             break;
-                        case Peca.REI_BRANCO:
+                        case Peca.REI + Peca.BRANCO:
                             casaGUI.desenharReiBranco();
                             break;
-                        case Peca.PEAO_BRANCO:
+                        case Peca.PEAO + Peca.BRANCO:
                             casaGUI.desenharPeaoBranco();
                             break;
-                        case Peca.TORRE_PRETA:
+                        case Peca.TORRE + Peca.PRETO:
                             casaGUI.desenharTorrePreta();
                             break;
-                        case Peca.CAVALO_PRETO:
+                        case Peca.CAVALO + Peca.PRETO:
                             casaGUI.desenharCavaloPreto();
                             break;
-                        case Peca.BISPO_PRETO:
+                        case Peca.BISPO + Peca.PRETO:
                             casaGUI.desenharBispoPreto();
                             break;
-                        case Peca.RAINHA_PRETA:
+                        case Peca.RAINHA + Peca.PRETO:
                             casaGUI.desenharRainhaPreta();
                             break;
-                        case Peca.REI_PRETO:
+                        case Peca.REI + Peca.PRETO:
                             casaGUI.desenharReiPreto();
                             break;
-                        case Peca.PEAO_PRETO:
+                        case Peca.PEAO + Peca.PRETO:
                             casaGUI.desenharPeaoPreto();
                             break;
                     }

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Cavalo
+comment0.text=\r\n\ Classe\ Cavalo,\ Define\ as\ regras\ e\ movimento\ para\ essa\ peca.\r\n\r\n\ @author\ (Andre\ Soares)\r\n\ @version\ (001\ 08/11/2020)\r\n
+comment1.params=cor
+comment1.target=Cavalo(int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Cavalo\r\n
+comment2.params=casa\ destino\ peca
+comment2.target=Casa\ mover(Casa,\ Casa,\ Peca)
+comment2.text=\r\n\ movimenta\ \ a\ peca\ para\ o\ local\ de\ destino\ caso\ esteja\ correto.\r\n
+comment3.params=casa\ destino
+comment3.target=java.lang.Boolean\ podeMover(Casa,\ Casa)
+comment3.text=\r\n\ Verifica\ se\ o\ movimento\ e\ valido,\ retorna\ um\ boolean.\ \r\n
+numComments=4
