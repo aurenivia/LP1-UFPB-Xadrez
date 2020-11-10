@@ -26,10 +26,12 @@ public class Peca {
     //decidi colocar a variavel cor, pois acho que sera util quando implementarmos o jogo. (Andre)
     private int cor;
     
+    private Rei rei;
+    private Rainha rainha;
     private Torre torre;
-    private Cavalo cavalo;
-    // private Peao peao;
+    private Cavalo cavalo;    
     private Bispo bispo;
+    // private Peao peao;
     
     
 
@@ -69,6 +71,12 @@ public class Peca {
             case Peca.BISPO:
                 this.bispo = new Bispo(this.cor);
                 break;
+            case Peca.RAINHA:
+                this.rainha = new Rainha(this.cor);
+                break;
+            case Peca.REI:
+                this.rei = new Rei(this.cor);
+                break;
         }
         
     }
@@ -93,6 +101,12 @@ public class Peca {
                 break;
             case Peca.BISPO:
                 this.casa = this.bispo.mover(this.casa, destino, this);
+                break;
+            case Peca.RAINHA:
+                this.casa = this.rainha.mover(this.casa, destino, this);
+                break;
+            case Peca.REI:
+                this.casa = this.rei.mover(this.casa, destino, this);
                 break;
             default:
                 this.casa.removerPeca();
