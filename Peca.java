@@ -28,7 +28,8 @@ public class Peca {
     
     // private Torre torre;
     private Cavalo cavalo;
-    // private Bispo bispo;
+    // private Peao peao;
+    private Bispo bispo;
     
     
 
@@ -62,6 +63,9 @@ public class Peca {
             case Peca.CAVALO:
                 this.cavalo = new Cavalo(this.cor);
                 break;
+            case Peca.BISPO:
+                this.bispo = new Bispo(this.cor);
+                break;
         }
         
     }
@@ -80,6 +84,9 @@ public class Peca {
              */
             case Peca.CAVALO:
                 this.casa = this.cavalo.mover(this.casa, destino, this);
+                break;
+            case Peca.BISPO:
+                this.casa = this.bispo.mover(this.casa, destino, this);
                 break;
             default:
                 this.casa.removerPeca();
