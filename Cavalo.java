@@ -1,6 +1,3 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -10,20 +7,20 @@ import javax.swing.JOptionPane;
  * @version (001 08/11/2020)
  */
 public class Cavalo
-    {
-        // instance variables - replace the example below with your ow
-        
-        private int cor;
+{
+    // instance variables - replace the example below with your ow
     
-        /**
-         * Constructor for objects of class Cavalo
-         */
-        public Cavalo(int cor)
-        {
-            // deixei essa variavel para implementar o metodo mover depois, mas talvez nao seja necessaria. (Andre)
-            
-            this.cor = cor;
-            
+    private int cor;
+
+    /**
+     * Constructor for objects of class Cavalo
+     */
+    public Cavalo(int cor)
+    {
+        // deixei essa variavel para implementar o metodo mover depois, mas talvez nao seja necessaria. (Andre)
+        
+        this.cor = cor;
+        
     }
     
     /**
@@ -32,7 +29,7 @@ public class Cavalo
     public Casa mover(Casa casa, Casa destino, Peca peca) {
         
         //variavel de controle. (Andre)
-        Casa novaCasa = casa; 
+        Casa novaCasa = casa;
         
         // verifica pelo metodo podeMover(), se o destino esta na posicao permitida para o tipo de peca. (Andre)
         if(this.podeMover(casa, destino)){
@@ -76,6 +73,5 @@ public class Cavalo
             return false;
         }       
        
-    }    
-   
+    }
 }

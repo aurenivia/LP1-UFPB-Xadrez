@@ -160,6 +160,18 @@ public class CasaGUI extends JButton {
         }
     }
     
+    //para poder comparar e controlar o highlighting na janela principal (Daniel)
+    //Ou pelo menos eu to tentando :(
+    
+    public int getCor(){
+        if(getCorPeca() == PECA_BRANCA){
+            return 0;
+        }
+        else{
+            return 6;
+        }
+    }
+    
     public void destacar() {
         setBackground(COR_DESTAQUE);
     }

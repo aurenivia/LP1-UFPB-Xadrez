@@ -31,7 +31,7 @@ public class Peca {
     private Torre torre;
     private Cavalo cavalo;    
     private Bispo bispo;
-    // private Peao peao;
+    private Peao peao;
     
     
 
@@ -62,6 +62,7 @@ public class Peca {
             *       this.torre = new Torre(this.cor);
             *       break;
             */
+       
             case Peca.TORRE:
                 this.torre = new Torre(this.cor);
                 break;
@@ -77,6 +78,8 @@ public class Peca {
             case Peca.REI:
                 this.rei = new Rei(this.cor);
                 break;
+            case Peca.PEAO:
+                this.peao = new Peao(this.cor);
         }
         
     }
@@ -85,60 +88,41 @@ public class Peca {
      * Movimenta a peca para uma nova casa.
      * @param destino nova casa que ira conter esta peca.
      */
-    public void mover(Casa destino, Peca peca) {
-        //O movimento sera feito dependendo do tipo de peca (Andre) 
-        
-            if(this.verificaDestino(this, destino)){
-            switch (this.getTipo()) {
-                /*  exemplo
-                 *  case Peca.TORRE:
-                 *     this.casa = this.torre.mover(this.casa, destino, this);
-                 *     break;
-                 */
-                case Peca.TORRE:
-                    this.casa = this.torre.mover(this.casa, destino, this);
-                    break;
-                case Peca.CAVALO:
-                    this.casa = this.cavalo.mover(this.casa, destino, this); 
-                    break;
-                case Peca.BISPO:
-                    this.casa = this.bispo.mover(this.casa, destino, this);
-                    break;
-                case Peca.RAINHA:
-                    this.casa = this.rainha.mover(this.casa, destino, this);
-                    break;
-                case Peca.REI:
-                    this.casa = this.rei.mover(this.casa, destino, this);
-                    break;
-                default:
-                    this.casa.removerPeca();
-                    destino.colocarPeca(this);
-                    this.casa = destino;
-                    break;
-            }
+    public void mover(Casa destino) {
+        //O movimento sera feito dependendo do tipo de peca (Andre)      
+        switch (this.getTipo()) {
+            /*  exemplo
+             *  case Peca.TORRE:
+             *     this.casa = this.torre.mover(this.casa, destino, this);
+             *     break;
+             */
+            case Peca.TORRE:
+                this.casa = this.torre.mover(this.casa, destino, this);
+                break;
+            case Peca.CAVALO:
+                this.casa = this.cavalo.mover(this.casa, destino, this);
+                break;
+            case Peca.BISPO:
+                this.casa = this.bispo.mover(this.casa, destino, this);
+                break;
+            case Peca.RAINHA:
+                this.casa = this.rainha.mover(this.casa, destino, this);
+                break;
+            case Peca.REI:
+                this.casa = this.rei.mover(this.casa, destino, this);
+                break;    
+            case Peca.PEAO:
+                this.casa = this.peao.mover(this.casa, destino, this);
+                break;
+            default:
+                this.casa.removerPeca();
+                destino.colocarPeca(this);
+                this.casa = destino;
+                break;
         }
         
     }
-    
-    /**
-     * Verifica se a casa de destino não contém uma peça de sua cor.
-     * 
-     */
-    public Boolean verificaDestino(Peca origem, Casa destino ) {
-        
-        Peca destinoPeca = destino.getPeca();
-        int corOrigem = origem.getCor();
-                
-        if(destinoPeca instanceof Peca){
-            int corDestino = destinoPeca.getCor();
-            if(corOrigem != corDestino){
-                return true;
-            }
-            return false;
-        }
-         return true;
-    }
-    
+
     /**
      * Valor    Tipo
      *   0      Torre

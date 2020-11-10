@@ -25,10 +25,11 @@ public class JanelaPrincipal extends JFrame {
      */
     public void reagir(CasaGUI casaClicada) {
         if (primeiroClique) {
-            if (casaClicada.possuiPeca()) {
-                casaClicadaOrigem = casaClicada;
-                casaClicadaOrigem.destacar();
-                primeiroClique = false;
+            //Acrescentei essa condicao para checar se a cor que está na casa clicada é a mesma cor do jogador do turno (Daniel)
+            if (casaClicada.possuiPeca() && jogo.controle.getCor() == casaClicada.getCor()) {
+                    casaClicadaOrigem = casaClicada;
+                    casaClicadaOrigem.destacar();
+                    primeiroClique = false;
             }
             else {
                 // clicou em uma posi�?o inv�lida, ent?o n?o faz nada.

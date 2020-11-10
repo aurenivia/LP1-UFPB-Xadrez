@@ -1,4 +1,4 @@
-
+ 
 /**
  * Armazena o tabuleiro e responsavel por posicionar as pecas.
  * 
@@ -8,9 +8,11 @@
 public class Jogo {
 
     private Tabuleiro tabuleiro;
+    public Controle controle;
 
     public Jogo() {
         tabuleiro = new Tabuleiro();
+        controle = new Controle();
         criarPecas();
     }
     
@@ -73,8 +75,11 @@ public class Jogo {
     public void moverPeca(int origemX, int origemY, int destinoX, int destinoY) {
         Casa origem = tabuleiro.getCasa(origemX, origemY);
         Casa destino = tabuleiro.getCasa(destinoX, destinoY);
-        Peca peca = origem.getPeca();  
-        peca.mover(destino, peca);
+        Peca peca = origem.getPeca();
+        if(peca.getCor() == controle.getCor()){
+            peca.mover(destino);
+            controle.jogada();
+        }
     }
     
     /**

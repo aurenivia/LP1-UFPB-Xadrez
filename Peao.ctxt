@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Peao
+comment0.text=\r\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ classe\ Peao\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\r\n
+comment1.params=cor
+comment1.target=Peao(int)
+comment1.text=\r\n\ COnstrutor\ para\ objetos\ da\ classe\ Peao\r\n
+comment2.params=casa\ destino\ peca
+comment2.target=Casa\ mover(Casa,\ Casa,\ Peca)
+comment3.params=casa\ destino
+comment3.target=java.lang.Boolean\ podeMover(Casa,\ Casa)
+numComments=4
