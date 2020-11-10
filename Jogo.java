@@ -73,8 +73,8 @@ public class Jogo {
     public void moverPeca(int origemX, int origemY, int destinoX, int destinoY) {
         Casa origem = tabuleiro.getCasa(origemX, origemY);
         Casa destino = tabuleiro.getCasa(destinoX, destinoY);
-        Peca peca = origem.getPeca(); 
-        peca.mover(destino);
+        Peca peca = origem.getPeca();  
+        peca.mover(destino, peca);
     }
     
     /**
