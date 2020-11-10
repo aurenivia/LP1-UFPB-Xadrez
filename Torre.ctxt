@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=Bispo
-comment0.text=\r\n\ Classe\ Bispo,\ Define\ as\ regras\ e\ movimento\ para\ essa\ peca.\r\n\r\n\ @author\ (Laura\ Franccine)\r\n\ @version\ (001\ 10/11/2020)\r\n
+comment0.target=Torre
+comment0.text=\r\n\ Classe\ Torre,\ Define\ as\ regras\ e\ movimento\ para\ essa\ peca.\r\n\r\n\ @author\ (Andre\ Soares)\r\n\ @author\ (Laura\ Franccine)\r\n\ @version\ (001\ 08/11/2020)\r\n
 comment1.params=cor
-comment1.target=Bispo(int)
+comment1.target=Torre(int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Cavalo\r\n
 comment2.params=casa\ destino\ peca
 comment2.target=Casa\ mover(Casa,\ Casa,\ Peca)

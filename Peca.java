@@ -26,7 +26,7 @@ public class Peca {
     //decidi colocar a variavel cor, pois acho que sera util quando implementarmos o jogo. (Andre)
     private int cor;
     
-    // private Torre torre;
+    private Torre torre;
     private Cavalo cavalo;
     // private Peao peao;
     private Bispo bispo;
@@ -60,6 +60,9 @@ public class Peca {
             *       this.torre = new Torre(this.cor);
             *       break;
             */
+            case Peca.TORRE:
+                this.torre = new Torre(this.cor);
+                break;
             case Peca.CAVALO:
                 this.cavalo = new Cavalo(this.cor);
                 break;
@@ -82,6 +85,9 @@ public class Peca {
              *     this.casa = this.torre.mover(this.casa, destino, this);
              *     break;
              */
+            case Peca.TORRE:
+                this.casa = this.torre.mover(this.casa, destino, this);
+                break;
             case Peca.CAVALO:
                 this.casa = this.cavalo.mover(this.casa, destino, this);
                 break;

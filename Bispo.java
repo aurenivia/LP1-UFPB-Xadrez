@@ -1,5 +1,5 @@
 /**
- * Classe Cavalo, Define as regras e movimento para essa peca.
+ * Classe Bispo, Define as regras e movimento para essa peca.
  *
  * @author (Laura Franccine)
  * @version (001 10/11/2020)
