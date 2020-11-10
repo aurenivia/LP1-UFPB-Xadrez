@@ -53,7 +53,7 @@ public class Bispo
   
        
             //Verifica se o destino está nas diagonais (Laura)
-            for(int i = -4; i <= 4; i++) {                    
+            for(int i = -7; i <= 7; i++) {                    
                     if( (casa.x + i == x && casa.y + i == y) || (casa.x + i == x && casa.y + (i * -1) == y)){
                         return true;
                     }
