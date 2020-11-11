@@ -44,14 +44,14 @@ public class Peao
         //Verifica se o destino esta no mesmo eixo x e y. (Andre)
            
            if(this.cor == 0){
-               if(casa.x == x && casa.y == y - 1 || (casa.y == 1 && y == 3)){
+               if(casa.x == x && casa.y == y - 1 || (casa.y == 1 && y == 3) && casa.x == x){
                 return true;                   
             }else {
                 return false;
             }     
            }
            else{
-               if(casa.x == x && casa.y == y + 1 || (casa.y == 6 && y == 4)){
+               if(casa.x == x && casa.y == y + 1 || (casa.y == 6 && y == 4) && casa.x == x){
                    return true;                   
                 }else {
                    return false;
