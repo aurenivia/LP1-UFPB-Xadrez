@@ -77,8 +77,10 @@ public class Jogo {
         Casa destino = tabuleiro.getCasa(destinoX, destinoY);
         Peca peca = origem.getPeca();
         if(peca.getCor() == controle.getCor()){
-            peca.mover(destino);
-            controle.jogada();
+            if(peca.verificaDestino(peca, destino)){
+                peca.mover(destino);
+                controle.jogada();
+            }
         }
     }
     
