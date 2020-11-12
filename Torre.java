@@ -27,13 +27,13 @@ public class Torre
     /**
      * movimenta  a peca para o local de destino caso esteja correto.
      */
-    public Casa mover(Casa casa, Casa destino, Peca peca) {
+    public Casa mover(Casa casa, Casa destino, Peca peca, Tabuleiro tabuleiro) {
         
         //variavel de controle. (Andre)
         Casa novaCasa = casa;
         
         // verifica pelo metodo podeMover(), se o destino esta na posicao permitida para o tipo de peca. (Andre)
-        if(this.podeMover(casa, destino)){
+        if(this.podeMover(casa, destino, tabuleiro)){
             casa.removerPeca();
             destino.colocarPeca(peca); 
             novaCasa = destino;
@@ -47,22 +47,52 @@ public class Torre
     /**
     * Verifica se o movimento e valido, retorna um boolean. 
     */
-    public Boolean podeMover(Casa casa, Casa destino) {
+    public Boolean podeMover(Casa casa, Casa destino, Tabuleiro tabuleiro) {
         
-        // variaveis para simplificar o codigo (Andre)
-        
-        int x = destino.x;
-        int y = destino.y;
-        
-        //Verifica se o destino esta no mesmo eixo x e y. (Andre)
-           
+            // variaveis para simplificar o codigo (Andre)
+            
+            int x = destino.x;
+            int y = destino.y;
+            
+            //Verifica se o destino esta no mesmo eixo x e y. (Andre)
+            
+           if(casa.x == x){
+               if(y > casa.y){
+                   for(int i = casa.y + 1; i < y; i++){
+                       if (tabuleiro.getCasa(casa.x, i).getPeca() instanceof Peca ) {
+                           return false; }
+                   }
+                   return true;
+               }
+               if(y < casa.y){
+                   for(int i = casa.y - 1; i > y; i--){
+                       
+                       if (tabuleiro.getCasa(casa.x, i).getPeca() instanceof Peca ) {
+                           return false; }
+                   }
+                   return true;
+               }
+            }
                                 
-           if(casa.x == x || casa.y == y){
-                return true;                   
-            }else { 
-            return false;
-        }       
-
+           if(casa.y == y){
+                if(x > casa.x){
+                   for(int i = casa.x + 1; i < x; i++){
+                       if (tabuleiro.getCasa(i, casa.y).getPeca() instanceof Peca ) {
+                           return false; }
+                   }
+                   return true;
+               }
+               if(x < casa.x){
+                   for(int i = casa.x - 1; i > x; i--){
+                       
+                       if (tabuleiro.getCasa(i, casa.y).getPeca() instanceof Peca ) {
+                           return false; }
+                   }
+                   return true;
+               }
+           }       
+           
+           return false;
     } 
         
 }

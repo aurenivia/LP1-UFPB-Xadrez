@@ -78,7 +78,7 @@ public class Jogo {
         Peca peca = origem.getPeca();
         if(peca.getCor() == controle.getCor()){
             if(peca.verificaDestino(peca, destino)){
-                peca.mover(destino);
+                peca.mover(destino, tabuleiro);
                 controle.jogada();
             }
         }

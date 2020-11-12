@@ -88,7 +88,7 @@ public class Peca {
      * Movimenta a peca para uma nova casa.
      * @param destino nova casa que ira conter esta peca.
      */
-    public void mover(Casa destino) {
+    public void mover(Casa destino, Tabuleiro tabuleiro) {
         //O movimento sera feito dependendo do tipo de peca (Andre)  
         
         if(this.verificaDestino(this, destino)){
@@ -99,7 +99,7 @@ public class Peca {
                  *     break;
                  */
                 case Peca.TORRE:
-                    this.casa = this.torre.mover(this.casa, destino, this);
+                    this.casa = this.torre.mover(this.casa, destino, this, tabuleiro);
                     break;
                 case Peca.CAVALO:
                     this.casa = this.cavalo.mover(this.casa, destino, this);
