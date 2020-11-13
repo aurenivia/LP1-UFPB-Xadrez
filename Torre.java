@@ -54,17 +54,33 @@ public class Torre
             int x = destino.x;
             int y = destino.y;
             
-            //Verifica se o destino esta no mesmo eixo x e y. (Andre)
+           //Verifica se o movimento foi no eixo y. (Andre)
             
            if(casa.x == x){
-               if(y > casa.y){
+               //Verifica se o movimento no eixo y foi para cima, ou seja y maior que casa.y . (Andre)
+               if(y > casa.y){               
+
+                   //percorre casa por casa verificando se ha uma peca 
                    for(int i = casa.y + 1; i < y; i++){
-                       if (tabuleiro.getCasa(casa.x, i).getPeca() instanceof Peca ) {
+                       //verifica se a casa possui uma peca 
+                       //tabuleiro é um objeto da classe Tabuleiro criado na classe jogo, passado como parametro no metodo
+                       //Peca.mover() que por sua vez passa como parametro para torre.mover() 
+                       if (tabuleiro.getCasa(casa.x, i).getPeca() instanceof Peca ) { 
+                           // tabuleiro.getCasa() -> retorna um objeto do tipo Casa
+                           // .getPeca() -> retorna a peca caso haja nessa casa
+                           // instanceof Peca -> verifica se de fato ha um objeto do tipo peca ou nao
                            return false; }
                    }
                    return true;
                }
+               // outro meio de escrever -> if (tabuleiro.getCasa(casa.x, i).getPeca() instanceof Peca )<-
+               // Casa casa = tabuleiro.getCasa(casa.x, i);
+               // Peca peca = casa.getPeca();
+               // if (peca instanceof Peca)
+               
+               //Verifica se o movimento no eixo y foi para baixo, ou seja y menor que casa.y . (Andre)
                if(y < casa.y){
+                   //percorre casa por casa verificando se ha uma peca (Andre)
                    for(int i = casa.y - 1; i > y; i--){
                        
                        if (tabuleiro.getCasa(casa.x, i).getPeca() instanceof Peca ) {
@@ -73,7 +89,8 @@ public class Torre
                    return true;
                }
             }
-                                
+            
+           //Verifica se o movimento foi no eixo x. (Andre)
            if(casa.y == y){
                 if(x > casa.x){
                    for(int i = casa.x + 1; i < x; i++){
