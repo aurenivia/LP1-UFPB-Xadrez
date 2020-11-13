@@ -12,8 +12,7 @@ import javax.swing.JOptionPane;
  * @author Leonardo Villeth &lt;lvilleth@cc.ci.ufpb.br&gt;
  */
 public class JanelaPrincipal extends JFrame {
-
-    private Jogo jogo;
+    private static Jogo jogo;
     private boolean primeiroClique;
     private CasaGUI casaClicadaOrigem;
     private CasaGUI casaClicadaDestino;
@@ -26,15 +25,13 @@ public class JanelaPrincipal extends JFrame {
     public void reagir(CasaGUI casaClicada) {
         if (primeiroClique) {
             if (casaClicada.possuiPeca()) {
-                //Acrescentei essa condicao para checar se a cor que está na casa clicada é a mesma cor do jogador do turno (Daniel)
-               if(jogo.controle.getCor() == casaClicada.getCor()){
+                if(casaClicada.getCor() == jogo.controle.getCor()){
                     casaClicadaOrigem = casaClicada;
                     casaClicadaOrigem.destacar();
                     primeiroClique = false;
-               }
-               else {
-                    JOptionPane.showMessageDialog(this, "É o turno do adversário");
-               }
+                } else{
+                    JOptionPane.showMessageDialog(this, "Não é o seu turno.");
+                }
             }
             else {
                 // clicou em uma posi�?o inv�lida, ent?o n?o faz nada.
@@ -83,7 +80,9 @@ public class JanelaPrincipal extends JFrame {
         super.pack();
     }
 
-    
+    static Jogo retornaJogo(){
+        return jogo;
+    }
 
     /**
      * Cria um novo jogo e atualiza o tabuleiro gr�fico.

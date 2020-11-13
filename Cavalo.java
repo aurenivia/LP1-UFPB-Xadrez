@@ -36,7 +36,7 @@ public class Cavalo
             casa.removerPeca();
             destino.colocarPeca(peca); 
             novaCasa = destino;
-            
+            JanelaPrincipal.retornaJogo().controle.jogada();
         }
             return novaCasa;
         

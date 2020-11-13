@@ -9,10 +9,10 @@ public class Jogo {
 
     private Tabuleiro tabuleiro;
     public Controle controle;
-
+    
     public Jogo() {
-        tabuleiro = new Tabuleiro();
         controle = new Controle();
+        tabuleiro = new Tabuleiro();
         criarPecas();
     }
     
@@ -76,11 +76,8 @@ public class Jogo {
         Casa origem = tabuleiro.getCasa(origemX, origemY);
         Casa destino = tabuleiro.getCasa(destinoX, destinoY);
         Peca peca = origem.getPeca();
-        if(peca.getCor() == controle.getCor()){
-            if(peca.verificaDestino(peca, destino)){
-                peca.mover(destino, tabuleiro);
-                controle.jogada();
-            }
+        if(peca.verificaDestino(peca, destino)){
+            peca.mover(destino, tabuleiro);    
         }
     }
     
@@ -90,4 +87,5 @@ public class Jogo {
     public Tabuleiro getTabuleiro() {
         return tabuleiro;
     }
+    
 }
