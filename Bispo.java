@@ -34,7 +34,6 @@ public class Bispo
                 casa.removerPeca();
                 destino.colocarPeca(peca); 
                 novaCasa = destino;
-                JanelaPrincipal.retornaJogo().controle.jogada();
             }
             return novaCasa;
         

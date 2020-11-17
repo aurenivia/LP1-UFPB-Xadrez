@@ -36,8 +36,7 @@ public class Torre
         if(this.podeMover(casa, destino, tabuleiro)){
             casa.removerPeca();
             destino.colocarPeca(peca); 
-            novaCasa = destino;
-            JanelaPrincipal.retornaJogo().controle.jogada();
+            novaCasa = destino; 
         }
         return novaCasa;
         

@@ -12,7 +12,8 @@ import javax.swing.JOptionPane;
  * @author Leonardo Villeth &lt;lvilleth@cc.ci.ufpb.br&gt;
  */
 public class JanelaPrincipal extends JFrame {
-    private static Jogo jogo;
+    private Jogo jogo;
+    private Controle controle;
     private boolean primeiroClique;
     private CasaGUI casaClicadaOrigem;
     private CasaGUI casaClicadaDestino;
@@ -25,12 +26,13 @@ public class JanelaPrincipal extends JFrame {
     public void reagir(CasaGUI casaClicada) {
         if (primeiroClique) {
             if (casaClicada.possuiPeca()) {
-                if(casaClicada.getCor() == jogo.controle.getCor()){
+                if(casaClicada.getCor() == controle.getCor()){
                     casaClicadaOrigem = casaClicada;
                     casaClicadaOrigem.destacar();
                     primeiroClique = false;
-                } else{
-                    JOptionPane.showMessageDialog(this, "Não é o seu turno.");
+                }
+                else {
+                    JOptionPane.showMessageDialog(this, "Não é o seu turno");
                 }
             }
             else {
@@ -40,11 +42,14 @@ public class JanelaPrincipal extends JFrame {
         }
         else {
             casaClicadaDestino = casaClicada;
-            jogo.moverPeca(casaClicadaOrigem.getPosicaoX(), casaClicadaOrigem.getPosicaoY(),
-                    casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
-            casaClicadaOrigem.atenuar();
-            primeiroClique = true;
-            atualizar();
+            if(casaClicadaDestino.getCorPeca() == -1 || casaClicadaDestino.getCorPeca() != controle.getCor()){
+                jogo.moverPeca(casaClicadaOrigem.getPosicaoX(), casaClicadaOrigem.getPosicaoY(),
+                        casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
+                casaClicadaOrigem.atenuar();
+                primeiroClique = true;
+                controle.jogada();
+                atualizar();
+            }
         }
     }
     
@@ -80,9 +85,7 @@ public class JanelaPrincipal extends JFrame {
         super.pack();
     }
 
-    static Jogo retornaJogo(){
-        return jogo;
-    }
+
 
     /**
      * Cria um novo jogo e atualiza o tabuleiro gr�fico.
@@ -93,6 +96,7 @@ public class JanelaPrincipal extends JFrame {
             casaClicadaOrigem.atenuar();
         }               
         jogo = new Jogo();
+        controle = new Controle();
         atualizar();
     }
 
