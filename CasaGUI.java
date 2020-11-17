@@ -165,11 +165,12 @@ public class CasaGUI extends JButton {
     
     public int getCor(){
         if(getCorPeca() == PECA_BRANCA){
-            return 0;
+            return 0; //indice da peça branca em outros arquivos
         }
-        else{
-            return 6;
+        else if(getCorPeca() == PECA_PRETA){
+            return 6; //indice da peça preta em outros arquivos
         }
+        return 1;
     }
     
     public void destacar() {
