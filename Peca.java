@@ -108,7 +108,7 @@ public class Peca {
                     this.casa = this.bispo.mover(this.casa, destino, this, tabuleiro);
                     break;
                 case Peca.RAINHA:
-                    this.casa = this.rainha.mover(this.casa, destino, this);
+                    this.casa = this.rainha.mover(this.casa, destino, this, tabuleiro);
                     break;
                 case Peca.REI:
                     this.casa = this.rei.mover(this.casa, destino, this);
