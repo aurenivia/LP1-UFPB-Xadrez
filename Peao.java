@@ -43,7 +43,7 @@ public class Peao
         //Verifica se o destino esta no mesmo eixo x e y. (Andre)
            
            if(this.cor == 0){
-               if(casa.x == x && (casa.y == y - 1 || (casa.y == 1 && y == 3)) && (destino.getPeca() == null)){
+               if(casa.x == x && (casa.y == y - 1 || (casa.y == 1 && y == 3)) && (destino.getPeca() == null)) {
                    return true;                   
                }
                else if((casa.x == x + 1 || casa.x == x - 1) && (casa.y == y - 1) && (this.cor != destino.getPeca().getCor())){
@@ -54,7 +54,7 @@ public class Peao
                }     
            }
            else{
-               if(casa.x == x && casa.y == y + 1 || (casa.y == 6 && y == 4) && casa.x == x){
+               if(casa.x == x && (casa.y == y + 1 || (casa.y == 6 && y == 4)) && (destino.getPeca() == null)){
                    return true;                   
                }
                else if((casa.x == x + 1 || casa.x == x - 1) && (casa.y == y + 1) && (this.cor != destino.getPeca().getCor())){
@@ -63,8 +63,7 @@ public class Peao
                else {
                    return false;
                }
-           }
-             
+           }           
 
     } 
     
