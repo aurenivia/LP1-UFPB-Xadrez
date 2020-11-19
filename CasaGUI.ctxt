@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=CasaGUI
-comment0.text=\r\n\ Interface\ Grafica\ de\ uma\ Casa\ no\ tabuleiro\ do\ jogo.\r\n\r\n\ @author\ Alan\ Moraes\ &lt;alan@ci.ufpb.br&gt;\r\n\ @author\ Leonardo\ Villeth\ &lt;lvilleth@cc.ci.ufpb.br&gt;\r\n
+comment0.text=\n\ Interface\ Grafica\ de\ uma\ Casa\ no\ tabuleiro\ do\ jogo.\n\n\ @author\ Alan\ Moraes\ &lt;alan@ci.ufpb.br&gt;\n\ @author\ Leonardo\ Villeth\ &lt;lvilleth@cc.ci.ufpb.br&gt;\n
 comment1.params=x\ y\ cor\ tabuleiro
 comment1.target=CasaGUI(int,\ int,\ java.awt.Color,\ TabuleiroGUI)
 comment10.params=
@@ -33,7 +33,7 @@ comment22.params=
 comment22.target=void\ atenuar()
 comment23.params=g
 comment23.target=void\ paintComponent(java.awt.Graphics)
-comment23.text=\r\n\ Pinta\ o\ componente\ com\ a\ cor\ de\ fundo,\ aceita\ valores\ RGBA\r\n
+comment23.text=\n\ Pinta\ o\ componente\ com\ a\ cor\ de\ fundo,\ aceita\ valores\ RGBA\n
 comment3.params=
 comment3.target=int\ getPosicaoX()
 comment4.params=

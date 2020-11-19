@@ -57,19 +57,15 @@ public class JanelaPrincipal extends JFrame {
                         casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
                 casaClicadaOrigem.atenuar();
                 primeiroClique = true;
-                
-                
                 if(movimentoValido) {
-                    System.out.println("cor peça destino: "+casaClicadaDestino.getCorPeca());
-                    System.out.println("cor do jogador: "+controle.getCor());
                     controle.jogada();
                 } else {
                     JOptionPane.showMessageDialog(this, "Movimento Inválido");
                 }
                 
                 if(movimentoValido && possuiRei) {
-                    JOptionPane.showMessageDialog(this, "Xeque-mate");
                     atualizar();
+                    JOptionPane.showMessageDialog(this, "Xeque-mate");
                     criarNovoJogo();
                 }
                 
