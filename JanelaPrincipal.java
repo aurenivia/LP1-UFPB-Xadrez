@@ -43,17 +43,34 @@ public class JanelaPrincipal extends JFrame {
         else {
             casaClicadaDestino = casaClicada;
             Boolean movimentoValido;
+            
+            // verifica se a casa de destino possui o rei
+            Boolean possuiRei = false;
+            Tabuleiro tabuleiro = jogo.getTabuleiro();
+            Casa casaDestino = tabuleiro.getCasa(casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
+            if(casaDestino.getPeca() instanceof Peca) {
+                if(casaDestino.getPeca().getTipo() == 4) { possuiRei = true; } 
+            }
+            
             if(casaClicadaDestino.getCorPeca() == -1 || casaClicadaDestino.getCor() != controle.getCor()){
                 movimentoValido = jogo.moverPeca(casaClicadaOrigem.getPosicaoX(), casaClicadaOrigem.getPosicaoY(),
                         casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
                 casaClicadaOrigem.atenuar();
                 primeiroClique = true;
+                
+                
                 if(movimentoValido) {
                     System.out.println("cor peça destino: "+casaClicadaDestino.getCorPeca());
                     System.out.println("cor do jogador: "+controle.getCor());
                     controle.jogada();
                 } else {
                     JOptionPane.showMessageDialog(this, "Movimento Inválido");
+                }
+                
+                if(movimentoValido && possuiRei) {
+                    JOptionPane.showMessageDialog(this, "Xeque-mate");
+                    atualizar();
+                    criarNovoJogo();
                 }
                 
                 atualizar();
