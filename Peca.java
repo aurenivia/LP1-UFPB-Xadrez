@@ -172,6 +172,11 @@ public class Peca {
     }
     
     
+    public void mudaTipo(int novoTipo){
+        this.tipo = novoTipo;
+        this.definirPeca(novoTipo);
+    }
+    
     /**
      * Valor    Cor
      *   6      Preto

@@ -25,11 +25,9 @@ public class Controle
     {
         if(this.jogador == 0){
             this.jogador = 6;
-            System.out.print("Brancas jogaram, turno das pretas\n");
         }
         else{
             this.jogador = 0;
-            System.out.print("Pretas jogaram, turno das brancas\n");
         }
     
     }

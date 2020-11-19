@@ -9,7 +9,7 @@ public class Peao
 {
     // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
     private int cor;
-
+    
     /**
      * COnstrutor para objetos da classe Peao
      */
@@ -29,6 +29,11 @@ public class Peao
             destino.colocarPeca(peca); 
             novaCasa = destino;
             
+        }
+        
+        if((this.cor == 0 && destino.y == 7) || (this.cor == 6 && destino.y == 0)){
+            System.out.println("Vira rainha por padrao");
+            peca.mudaTipo(3);
         }
         return novaCasa;
         
