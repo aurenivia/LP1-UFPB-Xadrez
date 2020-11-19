@@ -72,13 +72,14 @@ public class Jogo {
      * @param destinoX linha da Casa de destino.
      * @param destinoY coluna da Casa de destino.
      */
-    public void moverPeca(int origemX, int origemY, int destinoX, int destinoY) {
+    public Boolean moverPeca(int origemX, int origemY, int destinoX, int destinoY) {
         Casa origem = tabuleiro.getCasa(origemX, origemY);
         Casa destino = tabuleiro.getCasa(destinoX, destinoY);
         Peca peca = origem.getPeca();
-        if(peca.verificaDestino(peca, destino)){
-            peca.mover(destino, tabuleiro);    
-        }
+                
+        return peca.mover(destino, tabuleiro);    
+               
+        
     }
     
     /**

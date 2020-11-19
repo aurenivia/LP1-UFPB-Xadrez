@@ -42,14 +42,20 @@ public class JanelaPrincipal extends JFrame {
         }
         else {
             casaClicadaDestino = casaClicada;
+            Boolean movimentoValido;
             if(casaClicadaDestino.getCorPeca() == -1 || casaClicadaDestino.getCor() != controle.getCor()){
-                jogo.moverPeca(casaClicadaOrigem.getPosicaoX(), casaClicadaOrigem.getPosicaoY(),
+                movimentoValido = jogo.moverPeca(casaClicadaOrigem.getPosicaoX(), casaClicadaOrigem.getPosicaoY(),
                         casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
                 casaClicadaOrigem.atenuar();
                 primeiroClique = true;
-                System.out.println("cor peça destino: "+casaClicadaDestino.getCorPeca());
-                System.out.println("cor do jogador: "+controle.getCor());
-                controle.jogada();
+                if(movimentoValido) {
+                    System.out.println("cor peça destino: "+casaClicadaDestino.getCorPeca());
+                    System.out.println("cor do jogador: "+controle.getCor());
+                    controle.jogada();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Movimento Inválido");
+                }
+                
                 atualizar();
             }
         }

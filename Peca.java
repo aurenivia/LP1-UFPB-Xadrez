@@ -88,8 +88,10 @@ public class Peca {
      * Movimenta a peca para uma nova casa.
      * @param destino nova casa que ira conter esta peca.
      */
-    public void mover(Casa destino, Tabuleiro tabuleiro) {
+    public Boolean mover(Casa destino, Tabuleiro tabuleiro) {
         //O movimento sera feito dependendo do tipo de peca (Andre)  
+        
+        Casa novaCasa;
         
         if(this.verificaDestino(this, destino)){
             switch (this.getTipo()) {
@@ -99,30 +101,40 @@ public class Peca {
                  *     break;
                  */
                 case Peca.TORRE:
-                    this.casa = this.torre.mover(this.casa, destino, this, tabuleiro);
+                    novaCasa = this.torre.mover(this.casa, destino, this, tabuleiro);
                     break;
                 case Peca.CAVALO:
-                    this.casa = this.cavalo.mover(this.casa, destino, this);
+                    novaCasa = this.cavalo.mover(this.casa, destino, this);
                     break;
                 case Peca.BISPO:
-                    this.casa = this.bispo.mover(this.casa, destino, this, tabuleiro);
+                    novaCasa = this.bispo.mover(this.casa, destino, this, tabuleiro);
                     break;
                 case Peca.RAINHA:
-                    this.casa = this.rainha.mover(this.casa, destino, this, tabuleiro);
+                    novaCasa = this.rainha.mover(this.casa, destino, this, tabuleiro);
                     break;
                 case Peca.REI:
-                    this.casa = this.rei.mover(this.casa, destino, this);
+                    novaCasa = this.rei.mover(this.casa, destino, this);
                     break;    
                 case Peca.PEAO:
-                    this.casa = this.peao.mover(this.casa, destino, this);
+                    novaCasa = this.peao.mover(this.casa, destino, this);
                     break;
                 default:
+                    novaCasa = this.casa;
                     this.casa.removerPeca();
                     destino.colocarPeca(this);
                     this.casa = destino;
                     break;
             }
+            
+            if(this.casa != novaCasa) {
+                this.casa = novaCasa;
+                return true;
+            }
+            
+            return false;
         }
+        
+        return false;
     }
     
     /**
