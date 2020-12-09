@@ -22,43 +22,43 @@ public class Jogo {
      */
     private void criarPecas() {
         
-        // Pecas Brancas
+        // Pecas Brancas 
             
-        Peca peca1  = new Peca(tabuleiro.getCasa(0, 0), Peca.TORRE, Peca.BRANCO);
-        Peca peca2  = new Peca(tabuleiro.getCasa(1, 0), Peca.CAVALO, Peca.BRANCO);
-        Peca peca3  = new Peca(tabuleiro.getCasa(2, 0), Peca.BISPO, Peca.BRANCO);
-        Peca peca4  = new Peca(tabuleiro.getCasa(3, 0), Peca.RAINHA, Peca.BRANCO);
-        Peca peca5  = new Peca(tabuleiro.getCasa(4, 0), Peca.REI, Peca.BRANCO);
-        Peca peca6  = new Peca(tabuleiro.getCasa(5, 0), Peca.BISPO, Peca.BRANCO);
-        Peca peca7  = new Peca(tabuleiro.getCasa(6, 0), Peca.CAVALO, Peca.BRANCO);
-        Peca peca8  = new Peca(tabuleiro.getCasa(7, 0), Peca.TORRE, Peca.BRANCO);
-        Peca peca9  = new Peca(tabuleiro.getCasa(0, 1), Peca.PEAO, Peca.BRANCO);
-        Peca peca10 = new Peca(tabuleiro.getCasa(1, 1), Peca.PEAO, Peca.BRANCO);
-        Peca peca11 = new Peca(tabuleiro.getCasa(2, 1), Peca.PEAO, Peca.BRANCO);
-        Peca peca12 = new Peca(tabuleiro.getCasa(3, 1), Peca.PEAO, Peca.BRANCO);
-        Peca peca13 = new Peca(tabuleiro.getCasa(4, 1), Peca.PEAO, Peca.BRANCO);
-        Peca peca14 = new Peca(tabuleiro.getCasa(5, 1), Peca.PEAO, Peca.BRANCO);
-        Peca peca15 = new Peca(tabuleiro.getCasa(6, 1), Peca.PEAO, Peca.BRANCO);
-        Peca peca16 = new Peca(tabuleiro.getCasa(7, 1), Peca.PEAO, Peca.BRANCO);
+        Torre peca1  =   new Torre(tabuleiro.getCasa(0, 0), Peca.BRANCO);
+        Cavalo peca2  =  new Cavalo(tabuleiro.getCasa(1, 0), Peca.BRANCO);
+        Bispo peca3  =   new Bispo(tabuleiro.getCasa(2, 0), Peca.BRANCO);
+        Rainha peca4  =  new Rainha(tabuleiro.getCasa(3, 0), Peca.BRANCO);
+        Rei peca5  =     new Rei(tabuleiro.getCasa(4, 0), Peca.BRANCO);
+        Bispo peca6  =   new Bispo(tabuleiro.getCasa(5, 0), Peca.BRANCO);
+        Cavalo peca7  =  new Cavalo(tabuleiro.getCasa(6, 0), Peca.BRANCO);
+        Torre peca8  =   new Torre(tabuleiro.getCasa(7, 0), Peca.BRANCO);
+        Peao peca9  =    new Peao(tabuleiro.getCasa(0, 1), Peca.BRANCO);
+        Peao peca10 =    new Peao(tabuleiro.getCasa(1, 1), Peca.BRANCO);
+        Peao peca11 =    new Peao(tabuleiro.getCasa(2, 1), Peca.BRANCO);
+        Peao peca12 =    new Peao(tabuleiro.getCasa(3, 1), Peca.BRANCO);
+        Peao peca13 =    new Peao(tabuleiro.getCasa(4, 1), Peca.BRANCO);
+        Peao peca14 =    new Peao(tabuleiro.getCasa(5, 1), Peca.BRANCO);
+        Peao peca15 =    new Peao(tabuleiro.getCasa(6, 1), Peca.BRANCO);
+        Peao peca16 =    new Peao(tabuleiro.getCasa(7, 1), Peca.BRANCO);
         
         // Pecas Pretas
         
-        Peca peca17 = new Peca(tabuleiro.getCasa(0, 7), Peca.TORRE, Peca.PRETO);
-        Peca peca18 = new Peca(tabuleiro.getCasa(1, 7), Peca.CAVALO, Peca.PRETO);
-        Peca peca19 = new Peca(tabuleiro.getCasa(2, 7), Peca.BISPO, Peca.PRETO);
-        Peca peca20 = new Peca(tabuleiro.getCasa(3, 7), Peca.RAINHA, Peca.PRETO);
-        Peca peca21 = new Peca(tabuleiro.getCasa(4, 7), Peca.REI, Peca.PRETO);
-        Peca peca22 = new Peca(tabuleiro.getCasa(5, 7), Peca.BISPO, Peca.PRETO);
-        Peca peca23 = new Peca(tabuleiro.getCasa(6, 7), Peca.CAVALO, Peca.PRETO);
-        Peca peca24 = new Peca(tabuleiro.getCasa(7, 7), Peca.TORRE, Peca.PRETO);
-        Peca peca25 = new Peca(tabuleiro.getCasa(0, 6), Peca.PEAO, Peca.PRETO);
-        Peca peca26 = new Peca(tabuleiro.getCasa(1, 6), Peca.PEAO, Peca.PRETO);
-        Peca peca27 = new Peca(tabuleiro.getCasa(2, 6), Peca.PEAO, Peca.PRETO);
-        Peca peca28 = new Peca(tabuleiro.getCasa(3, 6), Peca.PEAO, Peca.PRETO);
-        Peca peca29 = new Peca(tabuleiro.getCasa(4, 6), Peca.PEAO, Peca.PRETO);
-        Peca peca30 = new Peca(tabuleiro.getCasa(5, 6), Peca.PEAO, Peca.PRETO);
-        Peca peca31 = new Peca(tabuleiro.getCasa(6, 6), Peca.PEAO, Peca.PRETO);
-        Peca peca32 = new Peca(tabuleiro.getCasa(7, 6), Peca.PEAO, Peca.PRETO);
+        Torre peca17 =   new Torre(tabuleiro.getCasa(0, 7), Peca.PRETO);
+        Cavalo peca18 =  new Cavalo(tabuleiro.getCasa(1, 7), Peca.PRETO);
+        Bispo peca19 =   new Bispo(tabuleiro.getCasa(2, 7), Peca.PRETO);
+        Rainha peca20 =  new Rainha(tabuleiro.getCasa(3, 7), Peca.PRETO);
+        Rei peca21 =     new Rei(tabuleiro.getCasa(4, 7), Peca.PRETO);
+        Bispo peca22 =   new Bispo(tabuleiro.getCasa(5, 7), Peca.PRETO);
+        Cavalo peca23 =  new Cavalo(tabuleiro.getCasa(6, 7), Peca.PRETO);
+        Torre peca24 =   new Torre(tabuleiro.getCasa(7, 7), Peca.PRETO);
+        Peao peca25 =    new Peao(tabuleiro.getCasa(0, 6), Peca.PRETO);
+        Peao peca26 =    new Peao(tabuleiro.getCasa(1, 6), Peca.PRETO);
+        Peao peca27 =    new Peao(tabuleiro.getCasa(2, 6), Peca.PRETO);
+        Peao peca28 =    new Peao(tabuleiro.getCasa(3, 6), Peca.PRETO);
+        Peao peca29 =    new Peao(tabuleiro.getCasa(4, 6), Peca.PRETO);
+        Peao peca30 =    new Peao(tabuleiro.getCasa(5, 6), Peca.PRETO);
+        Peao peca31 =    new Peao(tabuleiro.getCasa(6, 6), Peca.PRETO);
+        Peao peca32 =    new Peao(tabuleiro.getCasa(7, 6), Peca.PRETO);
 
         
     }
@@ -75,8 +75,8 @@ public class Jogo {
     public Boolean moverPeca(int origemX, int origemY, int destinoX, int destinoY) {
         Casa origem = tabuleiro.getCasa(origemX, origemY);
         Casa destino = tabuleiro.getCasa(destinoX, destinoY);
-        Peca peca = origem.getPeca();
-                
+        Peca peca = origem.getPeca(); 
+                                
         return peca.mover(destino, tabuleiro);    
                
         

@@ -4,39 +4,38 @@
  * @author (Laura Franccine)
  * @version (001 10/11/2020)
  */
-public class Bispo
+public class Bispo extends Peca
 {
-    // instance variables - replace the example below with your ow
-    
-    private int cor;
-
     /**
      * Constructor for objects of class Cavalo
      */
-    public Bispo(int cor)
+    public Bispo(Casa casa, int cor)
     {
-        // deixei essa variavel para implementar o metodo mover depois, mas talvez nao seja necessaria. (Andre)
-        
-        this.cor = cor;
+        //public static final int BISPO = 2;        
+        super(casa, 2, cor);
         
     }
     
     /**
      * movimenta  a peca para o local de destino caso esteja correto.
      */
-    public Casa mover(Casa casa, Casa destino, Peca peca, Tabuleiro tabuleiro) {
+    public Boolean mover(Casa destino, Tabuleiro tabuleiro) {
         
-            //variavel de controle. (Laura)
-            Casa novaCasa = casa;
+        if(this.verificaDestino(this, destino)) {
             
-            // verifica pelo metodo podeMover(), se o destino esta na posicao permitida para o tipo de peca. (Laura)
-            if(this.podeMover(casa, destino, tabuleiro)){
-                casa.removerPeca();
-                destino.colocarPeca(peca); 
-                novaCasa = destino;
+            if(this.podeMover(this.casa, destino, tabuleiro)){
+                
+                this.casa.removerPeca();
+                destino.colocarPeca(this);
+                this.casa = destino;
+                
+                return true;
+                
             }
-            return novaCasa;
+            return false;
+        }
         
+        return false;
     }
     
     

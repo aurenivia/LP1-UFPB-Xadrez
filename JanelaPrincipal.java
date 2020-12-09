@@ -48,15 +48,18 @@ public class JanelaPrincipal extends JFrame {
             Boolean possuiRei = false;
             Tabuleiro tabuleiro = jogo.getTabuleiro();
             Casa casaDestino = tabuleiro.getCasa(casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
+            
             if(casaDestino.getPeca() instanceof Peca) {
                 if(casaDestino.getPeca().getTipo() == 4) { possuiRei = true; } 
             }
             
             if(casaClicadaDestino.getCorPeca() == -1 || casaClicadaDestino.getCor() != controle.getCor()){
+                
                 movimentoValido = jogo.moverPeca(casaClicadaOrigem.getPosicaoX(), casaClicadaOrigem.getPosicaoY(),
-                        casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
+                casaClicadaDestino.getPosicaoX(), casaClicadaDestino.getPosicaoY());
                 casaClicadaOrigem.atenuar();
                 primeiroClique = true;
+                
                 if(movimentoValido) {
                     controle.jogada();
                 } else {
