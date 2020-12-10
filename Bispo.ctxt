@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=Bispo
-comment0.text=\n\ Classe\ Bispo,\ Define\ as\ regras\ e\ movimento\ para\ essa\ peca.\n\n\ @author\ (Laura\ Franccine)\n\ @version\ (001\ 10/11/2020)\n
-comment1.params=cor
-comment1.target=Bispo(int)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Cavalo\n
-comment2.params=casa\ destino\ peca\ tabuleiro
-comment2.target=Casa\ mover(Casa,\ Casa,\ Peca,\ Tabuleiro)
-comment2.text=\n\ movimenta\ \ a\ peca\ para\ o\ local\ de\ destino\ caso\ esteja\ correto.\n
+comment0.text=\r\n\ Classe\ Bispo,\ Define\ as\ regras\ e\ movimento\ para\ essa\ peca.\r\n\r\n\ @author\ (Laura\ Franccine)\r\n\ @version\ (001\ 10/11/2020)\r\n
+comment1.params=casa\ cor
+comment1.target=Bispo(Casa,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Cavalo\r\n
+comment2.params=destino\ tabuleiro
+comment2.target=java.lang.Boolean\ mover(Casa,\ Tabuleiro)
+comment2.text=\r\n\ movimenta\ \ a\ peca\ para\ o\ local\ de\ destino\ caso\ esteja\ correto.\r\n
 comment3.params=casa\ destino\ tabuleiro
 comment3.target=java.lang.Boolean\ podeMover(Casa,\ Casa,\ Tabuleiro)
-comment3.text=\n\ Verifica\ se\ o\ movimento\ e\ valido,\ retorna\ um\ boolean.\ \n
+comment3.text=\r\n\ Verifica\ se\ o\ movimento\ e\ valido,\ retorna\ um\ boolean.\ \r\n
 comment4.params=diagonal\ casa\ destino\ tabuleiro
 comment4.target=java.lang.Boolean\ pulouPeca(int,\ Casa,\ Casa,\ Tabuleiro)
-comment4.text=\n\ Verifica\ se\ ha\ uma\ outra\ peca\ na\ tragetoria\ de\ movimentacao\ da\ peca\n
+comment4.text=\r\n\ Verifica\ se\ ha\ uma\ outra\ peca\ na\ tragetoria\ de\ movimentacao\ da\ peca\r\n
 numComments=5

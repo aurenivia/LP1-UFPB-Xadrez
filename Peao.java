@@ -5,38 +5,36 @@
  * @author (seu nome) 
  * @version (número de versão ou data)
  */
-public class Peao
+public class Peao extends Peca
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int cor;
     
     /**
-     * COnstrutor para objetos da classe Peao
+     * Construtor para objetos da classe Peao
      */
-    public Peao(int cor)
+    public Peao(Casa casa, int cor)
     {
-        this.cor = cor;
+        //public static final int PEAO = 5;
+        super(casa, 5, cor);
     }
 
-    public Casa mover(Casa casa, Casa destino, Peca peca) {
+    public Boolean mover(Casa destino, Tabuleiro tabuleiro) {
         
-        //variavel de controle. (Andre)
-        Casa novaCasa = casa;
-        
-        // verifica pelo metodo podeMover(), se o destino esta na posicao permitida para o tipo de peca. (Andre)
-        if(this.podeMover(casa, destino)){
-            casa.removerPeca();
-            destino.colocarPeca(peca); 
-            novaCasa = destino;
+        if(this.verificaDestino(this, destino)) {
             
+            if(this.podeMover(this.casa, destino)){
+                
+                this.casa.removerPeca();
+                destino.colocarPeca(this);
+                this.casa = destino;
+                
+                return true;
+                
+            }
+            return false;
         }
         
-        if((this.cor == 0 && destino.y == 7) || (this.cor == 6 && destino.y == 0)){
-            System.out.println("Vira rainha por padrao");
-            peca.mudaTipo(3);
-        }
-        return novaCasa;
-        
+        return false;
+                
     }
     
     public Boolean podeMover(Casa casa, Casa destino) {
@@ -59,8 +57,8 @@ public class Peao
                    return false;
                }     
            }
-           else{
-               if(casa.x == x && (casa.y == y + 1 || (casa.y == 6 && y == 4)) && (destino.getPeca() == null)){
+           if(this.cor == 6){
+               if(casa.x == x && (casa.y == y + 1 || casa.y == 6 && y == 4) && (destino.getPeca() == null)){
                    return true;                   
                }
                else if((casa.x == x + 1 || casa.x == x - 1) && (casa.y == y + 1) && (destino.getPeca() != null)){
@@ -70,7 +68,7 @@ public class Peao
                    return false;
                }
            }           
-
+           return false;
     } 
     
 }
