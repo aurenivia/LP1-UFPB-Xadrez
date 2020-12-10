@@ -1,2 +1,2 @@
-# lp1-2018-1
-Conteúdo criado para a disciplina Linguagem de Programação I - 2018.1
+# lp1-UFPB-Xadrez
+Implementação de Jogo de Xadrês utilizando Programação Orientada a Objeto, feito para a disciplina de Linguagem de Programação I
